@@ -11,19 +11,6 @@ from langchain_openai import ChatOpenAI, OpenAIEmbeddings
 from langchain_core.runnables import RunnablePassthrough
 
 
-import os
-# from dotenv import load_dotenv,find_dotenv
-# load_dotenv(find_dotenv()) 
-
-# OpenAI_key = os.environ.get("OPEN_AI_KEY")
-
-with open('keys.txt','r') as file:
-    lines = []
-    for line in file:
-        openaikey = line
-
-os.environ["OPENAI_API_KEY"] = openaikey
-os.environ["GOOGLE_APPLICATION_CREDENTIALS"] = "gcp_cred.json"
 
 
 chat = ChatOpenAI(model="gpt-3.5-turbo-1106", temperature=0.5)
